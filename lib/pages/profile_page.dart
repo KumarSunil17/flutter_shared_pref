@@ -10,6 +10,7 @@ class ProfilePage extends StatefulWidget{
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
   Gradient linearGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment(0.7, 0.4),
@@ -26,12 +27,11 @@ class _ProfilePageState extends State<ProfilePage> {
         child: MaterialButton(onPressed: () async {
           SharedPreferences _sPref = await SharedPreferences.getInstance();
           await _sPref.setString('status', 'registered');
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (BuildContext context) => LoginPage(),
-                ),
-              );
-
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (BuildContext context) => LoginPage(),
+              ),
+            );
         },
           splashColor: Colors.redAccent[100],
           child: ShaderMask(shaderCallback: (bounds){

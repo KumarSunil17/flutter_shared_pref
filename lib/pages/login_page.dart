@@ -55,24 +55,37 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          TextField(
-            keyboardType: TextInputType.text,
-            style: TextStyle(
-                fontSize: 22.0,
-                color: Colors.black
+          Container(
+            width: MediaQuery.of(context).size.width/1.5,
+            height: MediaQuery.of(context).size.height/10,
+            margin: EdgeInsets.only(
+              bottom: 5.0,
+              left: MediaQuery.of(context).size.width/10,
+              right: MediaQuery.of(context).size.width/10,
+              top: 5.0,
             ),
-            controller: _usernameController,
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Enter username',
-                hintStyle: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold
-                ),
-                contentPadding: EdgeInsets.symmetric(
-                    horizontal: 30.0, vertical: 20.0)
+            child: TextField(
+              keyboardType: TextInputType.text,
+              controller: _usernameController,
+              style: TextStyle(fontSize: 20.0,
+                  decorationColor: Colors.blueGrey
+              ),
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius:BorderRadius.circular(6.0),
+                  ),
+                  hintText: 'Enter username',
+                  hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold
+                  ),
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 30.0, vertical: 20.0,
+                  )
+              ),
             ),
           ),
+
           SizedBox(
             height: 50.0,
           ),
